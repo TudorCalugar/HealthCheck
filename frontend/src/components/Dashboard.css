@@ -1,0 +1,248 @@
+.dashboard-container {
+    padding: 2rem;
+    margin-top: 64px;
+    min-height: calc(100vh - 64px);
+    background: linear-gradient(135deg, #00c9ff, #92fe9d);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Background Pattern Styles */
+.background-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    opacity: 0.15;
+    pointer-events: none;
+    animation: patternFloat 60s linear infinite;
+}
+
+.background-pattern svg {
+    width: 100%;
+    height: 100%;
+}
+
+@keyframes patternFloat {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+.dashboard-header {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.dashboard-header h1 {
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-header p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1rem;
+}
+
+.dashboard-content {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 2rem;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+}
+
+.analysis-list {
+    background: rgba(248, 249, 250, 0.9);
+    padding: 1rem;
+    border-right: 1px solid rgba(238, 238, 238, 0.5);
+    overflow-y: auto;
+    max-height: 80vh;
+}
+
+.analysis-item {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(5px);
+}
+
+.analysis-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.analysis-item.selected {
+    border-left: 4px solid #00c9ff;
+    background: rgba(240, 249, 255, 0.95);
+}
+
+.analysis-item-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.analysis-icon {
+    font-size: 1.5rem;
+    color: #00c9ff;
+}
+
+.analysis-info {
+    flex: 1;
+}
+
+.analysis-info h3 {
+    margin: 0;
+    font-size: 1rem;
+    color: #333;
+}
+
+.analysis-info p {
+    margin: 0.25rem 0 0;
+    font-size: 0.9rem;
+    color: #666;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.time-icon {
+    font-size: 0.9rem;
+}
+
+.chevron-icon {
+    color: #999;
+}
+
+.analysis-detail {
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.detail-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(238, 238, 238, 0.8);
+}
+
+.detail-header h2 {
+    margin: 0;
+    color: #333;
+}
+
+.detail-header .date {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.detail-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.image-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.analysis-text {
+    background: rgba(248, 249, 250, 0.9);
+    padding: 1.5rem;
+    border-radius: 8px;
+    backdrop-filter: blur(5px);
+}
+
+.analysis-text h3 {
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.text-content {
+    color: #555;
+    line-height: 1.6;
+}
+
+.text-content p {
+    margin-bottom: 1rem;
+}
+
+/* Loading and Error States */
+.dashboard-loading,
+.dashboard-error,
+.dashboard-empty {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    margin: 2rem auto;
+    max-width: 600px;
+    backdrop-filter: blur(5px);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .dashboard-content {
+        grid-template-columns: 1fr;
+    }
+
+    .analysis-list {
+        max-height: 300px;
+        border-right: none;
+        border-bottom: 1px solid rgba(238, 238, 238, 0.8);
+    }
+}
+
+@media (max-width: 768px) {
+    .dashboard-container {
+        padding: 1rem;
+        margin-top: 300px;
+    }
+
+    .dashboard-header h1 {
+        font-size: 2rem;
+    }
+
+    .analysis-detail {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .dashboard-header h1 {
+        font-size: 1.75rem;
+    }
+}

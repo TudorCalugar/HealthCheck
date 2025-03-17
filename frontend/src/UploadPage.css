@@ -1,0 +1,265 @@
+/* UploadPage.css */
+
+.upload-container {
+    min-height: calc(100vh - 64px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background: linear-gradient(135deg, #00c9ff, #92fe9d);
+    padding: 40px 20px;
+    color: #333;
+    margin-top: 64px;
+    /* Space for fixed navbar */
+}
+
+.upload-container h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: #fff;
+    text-align: center;
+}
+
+.analysis-icon {
+    margin-right: 10px;
+    color: #fff;
+    font-size: 1.5em;
+}
+
+/* Considerations Section */
+.considerations {
+    background: rgba(255, 255, 255, 0.85);
+    padding: 20px 25px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.considerations-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.info-icon {
+    color: #4caf50;
+    font-size: 1.8em;
+    margin-right: 10px;
+}
+
+.considerations h2 {
+    font-size: 1.8em;
+    color: #333;
+    margin: 0;
+}
+
+.considerations-content {
+    text-align: center;
+}
+
+.considerations-content p {
+    font-size: 1em;
+    color: #555;
+    margin: 10px 0;
+}
+
+/* Data Agreement Section */
+.data-agreement {
+    background: rgba(255, 255, 255, 0.85);
+    padding: 20px 25px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.data-agreement h2 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    color: #333;
+    text-align: center;
+}
+
+.data-agreement p {
+    font-size: 1em;
+    color: #555;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+.data-agreement label {
+    display: flex;
+    align-items: center;
+    font-size: 1em;
+    color: #555;
+    justify-content: center;
+}
+
+.data-agreement input[type="checkbox"] {
+    margin-right: 10px;
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+/* Upload Form */
+.upload-form {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 25px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+
+.upload-form form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.upload-form input[type="file"] {
+    margin-bottom: 20px;
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.upload-form button {
+    background-color: #25D366;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.upload-form button:hover {
+    background-color: #128C7E;
+}
+
+.upload-form button:disabled {
+    background-color: #a5d6a7;
+    cursor: not-allowed;
+}
+
+/* Response Messages */
+.response-message {
+    margin-top: 20px;
+    font-size: 1em;
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.response-message.success {
+    background-color: #4caf50;
+    color: #fff;
+}
+
+.response-message.error {
+    background-color: #f44336;
+    color: #fff;
+}
+
+.response-message.agreementError {
+    background-color: #cddc39;
+    color: #333;
+}
+
+/* Uploaded Image Display */
+.uploaded-image {
+    margin-top: 25px;
+    text-align: center;
+    width: 100%;
+}
+
+.uploaded-image h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.uploaded-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Image Description */
+.image-description {
+    margin-top: 25px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 25px 30px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-left: 5px solid #25D366;
+}
+
+.image-description h2 {
+    font-size: 1.6em;
+    margin-bottom: 15px;
+    color: #333;
+    border-bottom: 2px solid #25D366;
+    padding-bottom: 5px;
+}
+
+.image-description p {
+    font-size: 1em;
+    color: #555;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .upload-container {
+        margin-top: 300px;
+        /* Account for expanded navbar */
+        padding: 20px 15px;
+    }
+
+    .upload-container h1 {
+        font-size: 2em;
+    }
+
+    .considerations,
+    .data-agreement,
+    .upload-form,
+    .image-description {
+        padding: 15px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .upload-container {
+        padding: 15px 10px;
+    }
+
+    .upload-container h1 {
+        font-size: 1.8em;
+    }
+
+    .considerations h2,
+    .data-agreement h2 {
+        font-size: 1.6em;
+    }
+
+    .upload-form button {
+        padding: 10px 20px;
+        font-size: 0.95em;
+    }
+}
